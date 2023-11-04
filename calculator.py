@@ -40,6 +40,17 @@ class MyLayout(Widget):
         prior = self.ids.calc_input.text
         self.ids.calc_input.text = f'{prior}{sign}'
 
+    #create decimal function
+    def dot(self):
+        prior= self.ids.calc_input.text
+        if "." in prior:
+            pass
+        else:
+        #Add a decimal to the end of the text
+            prior=f'{prior}.'
+        #Output back to the text box
+            self.ids.calc_input.text = f'{prior}'
+
     #Create equals function
     def equals(self):
         prior = self.ids.calc_input.text
