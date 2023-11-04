@@ -50,17 +50,24 @@ class MyLayout(Widget):
             prior=f'{prior}.'
         #Output back to the text box
             self.ids.calc_input.text = f'{prior}'
-
+    #create function to make text box positive or negative
+    def pos_neg(self):
+        prior= self.ids.calc_input.text
+        #test to see if there's a - sign already
+        if "-" in prior:
+            self.ids.calc_input.text = f'{prior.replace("-", "")}'
+        else:
+            self.ids.calc_input.text = f'-{prior}'
     #Create equals function
     def equals(self):
         prior = self.ids.calc_input.text
-        #Addition 
+        #Addition
         if "+" in prior:
             num_list= prior.split("+")
-            answer = 0
+            answer = 0.0
             #Loop through our list
             for number in num_list:
-                answer = answer + int(number)
+                answer = answer + float(number)
             #print the answer in the text box
             self.ids.calc_input.text = str(answer)
 
