@@ -41,7 +41,7 @@
                 text: "/"
                 background_normal: ""
                 background_color:utils.get_color_from_hex("#FF9500")
-                on_press:root.divide()
+                on_press:root.math_sign("/")
 
             Button:
                 size_hint: (.2, .2)
@@ -62,7 +62,7 @@
                 size_hint: (.2, .2)
                 font_size:50
                 text: "x"
-                on_press: root.multiply()
+                on_press: root.math_sign("x")
                 background_normal: ""
                 background_color:utils.get_color_from_hex("#FF9500")
 
@@ -85,7 +85,7 @@
                 size_hint: (.2, .2)
                 font_size:50
                 text: "-"
-                on_press:root.subtract()
+                on_press:root.math_sign("-")
                 background_normal: ""
                 background_color:utils.get_color_from_hex("#FF9500")
 
@@ -108,7 +108,7 @@
                 size_hint: (.2, .2)
                 font_size:50
                 text: "+"
-                on_press:root.add()
+                on_press:root.math_sign("+")
                 background_normal: ""
                 background_color:utils.get_color_from_hex("#FF9500")
 

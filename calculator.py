@@ -34,23 +34,12 @@ class MyLayout(Widget):
             self.ids.calc_input.text = f'{button}'
         else:
             self.ids.calc_input.text = f'{prior}{button}'
-    
+
     #Create addition function
-    def add(self):
+    def math_sign(self,sign):
         prior = self.ids.calc_input.text
-        self.ids.calc_input.text = f'{prior}+'
-    #Create subtraction function
-    def subtract(self):
-        prior = self.ids.calc_input.text
-        self.ids.calc_input.text = f'{prior}-'
-    #Create multiplication function
-    def multiply(self):
-        prior = self.ids.calc_input.text
-        self.ids.calc_input.text = f'{prior}*'
-    #Create division function
-    def divide(self):
-        prior = self.ids.calc_input.text
-        self.ids.calc_input.text = f'{prior}/'
+        self.ids.calc_input.text = f'{prior}{sign}'
+
     #Create equals function
     def equals(self):
         prior = self.ids.calc_input.text
