@@ -1,0 +1,12 @@
+certifi
+charset-normalizer
+Cython
+docutils
+idna
+Kivy
+Kivy-Garden
+pip
+Pygments
+requests
+setuptools
+urllib3
