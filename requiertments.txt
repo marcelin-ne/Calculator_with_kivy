@@ -10,3 +10,4 @@ Pygments
 requests
 setuptools
 urllib3
+pyinstaller

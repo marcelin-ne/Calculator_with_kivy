@@ -9,7 +9,8 @@ from kivy.core.window import Window
 Window.size = (500, 700)
 
 #The first way to load the file
-Builder.load_file('calculator.kv')
+
+Builder.load_file('/Users/marcelamontalvo/Documents/Calculator_with_kivy/Calculator_with_kivy/calculator.kv')
 #Construct the Layout
 class MyLayout(Widget):
     def clear(self):
