@@ -43,7 +43,14 @@ class MyLayout(Widget):
     #create decimal function
     def dot(self):
         prior= self.ids.calc_input.text
-        if "." in prior:
+        #split out text box by +
+        num_list = prior.split("+")
+        if "+" in prior and "." not in num_list[-1]: 
+            #Add a decimal to the end of the text
+            prior=f'{prior}.'
+        #Output back to the text box
+            self.ids.calc_input.text = f'{prior}'
+        elif "." in prior:
             pass
         else:
         #Add a decimal to the end of the text
