@@ -1,5 +1,8 @@
 #:import utils kivy.utils
 
+<Button>
+    padding: 15
+    spacing: 200
 
 <MyLayout>
     BoxLayout:
@@ -9,15 +12,17 @@
         TextInput:
             id: calc_input
             text:"0"
-            haligh: "right"
-            font_size: 65
+            halign: "right"
+            font_size: 120
             size_hint: (1, .15)
-
+            #change the color of the text
+            background_color: utils.get_color_from_hex("#2C2C2C")
+            foreground_color: utils.get_color_from_hex("#FFFFFF")
         GridLayout:
             cols:4
             rows:5
 
-            #row
+            #row 1
             Button:
                 id: clear
                 size_hint: (.2, .2)
@@ -43,7 +48,7 @@
                 background_normal: ""
                 background_color:utils.get_color_from_hex("#FF9500")
                 on_press:root.math_sign("/")
-
+            #row 2
             Button:
                 size_hint: (.2, .2)
                 font_size:50
@@ -63,10 +68,10 @@
                 size_hint: (.2, .2)
                 font_size:50
                 text: "x"
-                on_press: root.math_sign("x")
+                on_press: root.math_sign("*")
                 background_normal: ""
                 background_color:utils.get_color_from_hex("#FF9500")
-
+            #row 3
             Button:
                 size_hint: (.2, .2)
                 font_size:50
@@ -89,7 +94,7 @@
                 on_press:root.math_sign("-")
                 background_normal: ""
                 background_color:utils.get_color_from_hex("#FF9500")
-
+            #row 4
             Button:
                 size_hint: (.2, .2)
                 font_size:50
@@ -112,7 +117,7 @@
                 on_press:root.math_sign("+")
                 background_normal: ""
                 background_color:utils.get_color_from_hex("#FF9500")
-
+            #row 5
             Button:
                 size_hint: (.2, .2)
                 font_size:50
@@ -126,7 +131,14 @@
             Button:
                 size_hint: (.2, .2)
                 font_size:50
+                text: "."
+                on_press: root.button_press(",")
+            Button:
+                size_hint: (.2, .2)
+                font_size:50
                 text: "="
                 background_normal: ""
                 background_color:utils.get_color_from_hex("#FF9500")
+                spacing: 20
+                padding: 15
                 on_press: root.equals()

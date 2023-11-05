@@ -95,7 +95,7 @@ class MyLayout(Widget):
 #Call the class
 class CalculatorApp(App):
     def build(self):
-    #Window.clearcolor = (1, 1, 1, 1)
+        Window.clearcolor = (0, 0, 0, 1)
         return MyLayout()
 
 if __name__ == '__main__':
