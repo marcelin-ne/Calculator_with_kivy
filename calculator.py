@@ -17,7 +17,10 @@ class MyLayout(Widget):
     #Create a button pressing function
     def button_press(self, button):
         #Create a variable that contains whatever is in the input field
-        prior = self.ids.calc_input.text 
+        prior = self.ids.calc_input.text
+        #test for error first
+        if "Error" in prior:
+            prior = ''
         #Determine if 0 is in the input field
         if prior == '0':
             self.ids.calc_input.text = ''
@@ -68,6 +71,16 @@ class MyLayout(Widget):
     #Create equals function
     def equals(self):
         prior = self.ids.calc_input.text
+        #Error Handling
+        try:
+            #Evaluate the math from the text box
+            answer = eval(prior) #Take a string and evaluate it
+            #it will return the math
+            #output the answer
+            self.ids.calc_input.text = f'{answer}'
+        except:
+            self.ids.calc_input.text = "Error"
+        '''
         #Addition
         if "+" in prior:
             num_list= prior.split("+")
@@ -76,7 +89,7 @@ class MyLayout(Widget):
             for number in num_list:
                 answer = answer + float(number)
             #print the answer in the text box
-            self.ids.calc_input.text = str(answer)
+            self.ids.calc_input.text = str(answer) '''
 
 
 #Call the class
